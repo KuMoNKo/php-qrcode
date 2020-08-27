@@ -7,7 +7,7 @@ This is a stripped down version of https://github.com/kreativekorp/barcode
 Use from a PHP script:
 
 ```
-include 'qrcode.php';
+use Kumonko\QRCode\QRCode;
 
 $generator = new QRCode($data, $options);
 
@@ -18,20 +18,12 @@ $generator->output_image();
 $image = $generator->render_image();
 imagepng($image);
 imagedestroy($image);
-```
-
-Use with GET or POST:
-
-```
-qrcode.php?s={symbology}&d={data}&{options}
-```
-
-e.g.
+/* Create base64 image */
+$image = imagepng($generator->render_image());
+$imageData = base64_encode($image);
+echo "<img src='$imageData'>";
 
 ```
-qrcode.php?s=qr&d=HELLO%20WORLD&sf=8&ms=r&md=0.8
-```
-
 #### Options:
 `s` - Symbology (type of QR code). One of:
 ```

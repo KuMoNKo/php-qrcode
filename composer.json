@@ -1,0 +1,25 @@
+{
+	"name" : "kumonko/qrcode",
+	"description" : "QRCode generator updated from psyon/php-qrcode",
+	"type" : "library",
+	"keywords" : [
+		"clean",
+		"php",
+		"qrcode"
+	],
+	"homepage" : "https://github.com/kumonko/php-qrcode",
+	"license" : "MIT",
+	"authors" : [{
+			"name" : "Manuel A. Lobeiras",
+			"homepage" : "https://kumonko.es/"
+		}
+	],
+	"require" : {
+		"php" : ">=7.0.0"
+	},
+	"autoload" : {
+		"psr-4" : {
+			"Kumonko\\QRCode\\" : "src"
+		}
+	}
+}
