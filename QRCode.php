@@ -25,13 +25,6 @@ FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
 
 \****************************************************************************/
-
-if (realpath(__FILE__) == realpath($_SERVER['SCRIPT_FILENAME'])) {
-	$generator = new QRCode($_REQUEST['d'], $_REQUEST);
-	$generator->output_image();
-	exit(0);
-}
-
 class QRCode {
 	private $data;
 	private $options;
