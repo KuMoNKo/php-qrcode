@@ -18,10 +18,10 @@ $generator->output_image();
 $image = $generator->render_image();
 imagepng($image);
 imagedestroy($image);
-/* Create base64 image */
+
+/* Show base64 image in HTML */
 $image = imagepng($generator->render_image());
-$imageData = base64_encode($image);
-echo "<img src='$imageData'>";
+echo "<img src='data:image/png;base64,".base64_encode($image)."'>";
 
 ```
 #### Options:
